@@ -1,0 +1,93 @@
+const PEOPLE=[{"nom": "Abdoul Carime", "prenom": "Nishat", "table": 10}, {"nom": "Abdoul Carime", "prenom": "Sandira", "table": 10}, {"nom": "Abida", "prenom": "Pascal", "table": 23}, {"nom": "Achard", "prenom": "Patricia", "table": 41}, {"nom": "Achard", "prenom": "Philippe", "table": 9}, {"nom": "Adalbert", "prenom": "Marie Justine", "table": 41}, {"nom": "Aland", "prenom": "Lourdes Marie Miraline", "table": 6}, {"nom": "André", "prenom": "Rajesh", "table": 6}, {"nom": "André", "prenom": "Sandrine", "table": 13}, {"nom": "Appavou Cornillot", "prenom": "Lydia", "table": 5}, {"nom": "Ashok", "prenom": "Devikarany", "table": 8}, {"nom": "Barret", "prenom": "Anthony", "table": 10}, {"nom": "Barret", "prenom": "Chantal", "table": 4}, {"nom": "Barret", "prenom": "Julian", "table": 14}, {"nom": "Berry", "prenom": "Félicie", "table": 15}, {"nom": "Bienaime", "prenom": "Christine", "table": 44}, {"nom": "Blampain", "prenom": "Maxime", "table": 5}, {"nom": "Blanc", "prenom": "Jackie", "table": 26}, {"nom": "Bonpapa", "prenom": "François", "table": 21}, {"nom": "Brutus", "prenom": "Augustin", "table": 14}, {"nom": "Carlos", "prenom": "Benjamin", "table": 43}, {"nom": "Carounanidy", "prenom": "Patricia", "table": 14}, {"nom": "Castilla", "prenom": "Pascal", "table": 44}, {"nom": "Chanemougam", "prenom": "Chila", "table": 10}, {"nom": "Chanemougam", "prenom": "Sander", "table": 24}, {"nom": "Chemise", "prenom": "Etienne", "table": 7}, {"nom": "Chemise", "prenom": "Etienne", "table": 4}, {"nom": "David", "prenom": "Adrien", "table": 25}, {"nom": "David", "prenom": "Gérard", "table": 25}, {"nom": "David", "prenom": "Jean-Paul", "table": 2}, {"nom": "David", "prenom": "Marie", "table": 3}, {"nom": "David", "prenom": "Marie-Joëlle", "table": 23}, {"nom": "David", "prenom": "Raj", "table": 42}, {"nom": "David", "prenom": "Victor", "table": 5}, {"nom": "De Canagua", "prenom": "Jean- Pierre", "table": 9}, {"nom": "De Rozario", "prenom": "Bernard", "table": 24}, {"nom": "Decondinguy", "prenom": "Patricia", "table": 21}, {"nom": "Demay", "prenom": "Agnès", "table": 22}, {"nom": "Demay", "prenom": "Jean Loup", "table": 12}, {"nom": "Derre", "prenom": "Alain", "table": 4}, {"nom": "Derre", "prenom": "Josiane", "table": 21}, {"nom": "Djodi", "prenom": "Pregash", "table": 13}, {"nom": "Dufaux", "prenom": "Nathalie", "table": 4}, {"nom": "Dussol", "prenom": "Alexis", "table": 42}, {"nom": "Emilion", "prenom": "Brigitte", "table": 22}, {"nom": "Emilion", "prenom": "Myriam", "table": 23}, {"nom": "Emilion", "prenom": "Richard", "table": 31}, {"nom": "Faïfe", "prenom": "Jean Marie", "table": 31}, {"nom": "Fernandez", "prenom": "Anita", "table": 13}, {"nom": "Filatriau", "prenom": "Michèle", "table": 21}, {"nom": "Filatriau", "prenom": "Yannick", "table": 44}, {"nom": "Fitzgerald Jayanthkumar", "prenom": "Emmanuel", "table": 2}, {"nom": "Fleury", "prenom": "Bertin", "table": 1}, {"nom": "Fleury", "prenom": "Marie Helene", "table": 25}, {"nom": "François", "prenom": "Lada", "table": 32}, {"nom": "François", "prenom": "Livingston", "table": 11}, {"nom": "Galien", "prenom": "Henriette", "table": 44}, {"nom": "Gnanou", "prenom": "Jean Pierre", "table": 14}, {"nom": "Gnanou", "prenom": "Justine", "table": 31}, {"nom": "Govindane", "prenom": "Uthaya Kumar", "table": 10}, {"nom": "Gupta", "prenom": "Shilendra", "table": 22}, {"nom": "Gupta", "prenom": "Twinkle", "table": 8}, {"nom": "Gérard", "prenom": "Nalini", "table": 44}, {"nom": "Jean", "prenom": "Jacqueline", "table": 12}, {"nom": "Joseph", "prenom": "Félicie", "table": 7}, {"nom": "Joseph", "prenom": "Selvam", "table": 43}, {"nom": "Karunagatan", "prenom": "Vassanta", "table": 31}, {"nom": "Klebert", "prenom": "Ravi Christian", "table": 41}, {"nom": "Krumb", "prenom": "Aline", "table": 22}, {"nom": "LATCHOU", "prenom": "Assogane", "table": 4}, {"nom": "Lebrun", "prenom": "Chantal", "table": 8}, {"nom": "Lebrun", "prenom": "Chloé", "table": 2}, {"nom": "Lebrun", "prenom": "Nobel", "table": 32}, {"nom": "Louis", "prenom": "Patrick", "table": 7}, {"nom": "Magnifique", "prenom": "Baiju", "table": 1}, {"nom": "Magnifique", "prenom": "Fatima", "table": 2}, {"nom": "Malé", "prenom": "Kanchana", "table": 13}, {"nom": "Malé", "prenom": "Majo", "table": 12}, {"nom": "Manivel", "prenom": "Malone", "table": 15}, {"nom": "Manuel de Condinguy", "prenom": "Joséphine", "table": 9}, {"nom": "Marius", "prenom": "Sita", "table": 22}, {"nom": "Matthieu", "prenom": "Marie Christine", "table": 25}, {"nom": "Mogane", "prenom": "Brigitte", "table": 31}, {"nom": "Mogane", "prenom": "Céline", "table": 26}, {"nom": "Mogane", "prenom": "Ilango", "table": 3}, {"nom": "Monnier", "prenom": "Ghislaine", "table": 42}, {"nom": "Mouttapa", "prenom": "Jean Marie", "table": 23}, {"nom": "Mouttapa", "prenom": "Nalini", "table": 41}, {"nom": "Nanwani", "prenom": "Lata", "table": 4}, {"nom": "Nanwani", "prenom": "Mano", "table": 12}, {"nom": "Nguyen", "prenom": "Jean Michel", "table": 32}, {"nom": "Noranha", "prenom": "Ghislaine", "table": 41}, {"nom": "Paquiry", "prenom": "Sylvain", "table": 1}, {"nom": "Pasquet", "prenom": "Pierre-Dominique", "table": 3}, {"nom": "Paul", "prenom": "Ghislaine", "table": 7}, {"nom": "Paume", "prenom": "Manogar", "table": 5}, {"nom": "Perrotet", "prenom": "Théodore", "table": 42}, {"nom": "Pharamond", "prenom": "Jean Bernard", "table": 24}, {"nom": "Pharamond Berger", "prenom": "Annie", "table": 16}, {"nom": "Philomena Rani", "prenom": "Mary", "table": 16}, {"nom": "Phuong", "prenom": "Célestine", "table": 24}, {"nom": "Primoguet", "prenom": "Marie-Joëlle", "table": 2}, {"nom": "Ramanadapoulle", "prenom": "Honorine", "table": 21}, {"nom": "Ramanadapoulle", "prenom": "Manimarane", "table": 15}, {"nom": "Rheeman", "prenom": "Anita", "table": 43}, {"nom": "Rheeman", "prenom": "S.J", "table": 26}, {"nom": "Saint François", "prenom": "Sumitra", "table": 9}, {"nom": "Samuel", "prenom": "Ashwini", "table": 6}, {"nom": "Samuel", "prenom": "Marie", "table": 42}, {"nom": "Samuel", "prenom": "Nadine", "table": 43}, {"nom": "Samy", "prenom": "Lima", "table": 43}, {"nom": "Samy", "prenom": "Roger", "table": 13}, {"nom": "Sanfal", "prenom": "Christiane", "table": 23}, {"nom": "Sankar", "prenom": "Claudine", "table": 32}, {"nom": "Sarma", "prenom": "Porselvi", "table": 32}, {"nom": "Sathyamurti", "prenom": "Shanty", "table": 12}, {"nom": "Selvarangame", "prenom": "Selvam", "table": 10}, {"nom": "Selvarangame", "prenom": "Soundra", "table": 12}, {"nom": "Settouraman", "prenom": "Kaminy", "table": 41}, {"nom": "Sicé", "prenom": "Michel", "table": 2}, {"nom": "Sigaut", "prenom": "Paul", "table": 15}, {"nom": "Simonel", "prenom": "Karthy", "table": 13}, {"nom": "Siva", "prenom": "Daya Jean-Pierre", "table": 25}, {"nom": "Siva", "prenom": "Sylvie", "table": 25}, {"nom": "Soupramanian", "prenom": "Balamouragan", "table": 31}, {"nom": "Soupramanian", "prenom": "Radjechekanna", "table": 44}, {"nom": "Talreja", "prenom": "Dilip", "table": 11}, {"nom": "Talreja", "prenom": "Sobana", "table": 43}, {"nom": "Tamby", "prenom": "Chitra", "table": 16}, {"nom": "Tamby", "prenom": "Jean-François", "table": 32}, {"nom": "Verone", "prenom": "Zéphirin", "table": 8}, {"nom": "Vérone", "prenom": "Anne Marie", "table": 16}, {"nom": "Vérone", "prenom": "Christophe Henri", "table": 5}, {"nom": "Waroux", "prenom": "Chantal", "table": 1}, {"nom": "Xavier", "prenom": "Robert", "table": 6}, {"nom": "Zeganadin", "prenom": "Selva", "table": 11}];
+function norm(s){return(s||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9 ]/g," ").replace(/\s+/g," ").trim()}
+PEOPLE.forEach(p=>{p.full=(p.prenom+" "+p.nom).trim();p.key=norm(p.full);p.nkey=norm(p.nom);p.pkey=norm(p.prenom)});
+function lev(a,b){let d=Array.from({length:a.length+1},()=>Array(b.length+1).fill(0));for(let i=0;i<=a.length;i++)d[i][0]=i;for(let j=0;j<=b.length;j++)d[0][j]=j;for(let i=1;i<=a.length;i++)for(let j=1;j<=b.length;j++)d[i][j]=Math.min(d[i-1][j]+1,d[i][j-1]+1,d[i-1][j-1]+(a[i-1]!=b[j-1]));return d[a.length][b.length]}
+function score(t,p){t=norm(t).replace(/\b(monsieur|madame|mr|mme|mister|mrs|miss)\b/g,"").trim();if(!t)return 0;let best=0;for(const k of[p.key,p.nkey,p.pkey]){if(!k)continue;if(k===t)best=Math.max(best,1);if(k.includes(t)||t.includes(k))best=Math.max(best,.94);best=Math.max(best,1-lev(t,k)/Math.max(t.length,k.length))}let z=t.split(" ").filter(x=>x.length>1);if(z.length&&z.every(x=>p.key.includes(x)))best=Math.max(best,.97);return best}
+function rank(t){return PEOPLE.map(p=>({p,s:score(t,p)})).sort((a,b)=>b.s-a.s)}
+const q=document.querySelector("#q"),c=document.querySelector("#cands"),res=document.querySelector("#result");
+function show(p){document.querySelector("#rname").textContent=p.full;document.querySelector("#rtable").textContent=p.table;res.style.display="block";res.scrollIntoView({behavior:"smooth",block:"center"})}
+function choices(t,voice=false){c.innerHTML="";if(!norm(t))return;let r=rank(t),a=r[0],b=r[1];if(voice&&a&&a.s>=.82&&(!b||a.s-b.s>=.08)){show(a.p);return}r.slice(0,5).filter(x=>x.s>.35).forEach(x=>{let b=document.createElement("button");b.className="cand";b.textContent=x.p.full+" — table "+x.p.table;b.onclick=()=>show(x.p);c.appendChild(b)})}
+q.oninput=e=>choices(e.target.value);
+document.querySelector("#again").onclick=()=>{res.style.display="none";q.value="";c.innerHTML="";q.focus()};
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition,
+      mic=document.querySelector("#mic"),
+      status=document.querySelector("#status"),
+      heard=document.querySelector("#heard");
+
+if(SR){
+  let rec=new SR();
+
+  // On garde le moteur français, qui fonctionne sur cet iPhone.
+  rec.lang="fr-FR";
+  rec.interimResults=false;
+  rec.maxAlternatives=10;
+
+  // TEST : contextual biasing. Si Safari ne le prend pas en charge,
+  // ce bloc est simplement ignoré et le micro continue à fonctionner.
+  try{
+    if("SpeechRecognitionPhrase" in window && "phrases" in rec){
+      const Phrase=window.SpeechRecognitionPhrase;
+      const noms=[...new Set(PEOPLE.map(p=>p.nom))];
+      rec.phrases=noms.map(n=>new Phrase(n,10));
+      status.textContent="Micro prêt · noms favorisés";
+    }
+  }catch(e){
+    console.log("Contextual biasing indisponible :",e);
+  }
+
+  mic.onclick=()=>{
+    try{
+      rec.start();
+    }catch(e){
+      status.textContent="Micro déjà actif.";
+    }
+  };
+
+  rec.onstart=()=>{
+    mic.classList.add("on");
+    mic.textContent="● J'ÉCOUTE…";
+    status.textContent="Prononcez le nom.";
+    heard.textContent="";
+  };
+
+  rec.onend=()=>{
+    mic.classList.remove("on");
+    mic.textContent="🎤 DIRE LE NOM";
+  };
+
+  rec.onerror=e=>{
+    status.textContent="Erreur micro : "+e.error;
+  };
+
+  rec.onresult=e=>{
+    let alts=[];
+    for(let i=0;i<e.results[0].length;i++){
+      alts.push(e.results[0][i].transcript);
+    }
+    heard.textContent='Entendu : “'+alts[0]+'”';
+
+    let all=[];
+    alts.forEach(t=>
+      rank(t).slice(0,3).forEach(x=>all.push({...x,text:t}))
+    );
+    all.sort((a,b)=>b.s-a.s);
+
+    if(all[0]){
+      let next=all.find(x=>x.p!==all[0].p);
+      if(all[0].s>=.82&&(!next||all[0].s-next.s>=.08)){
+        show(all[0].p);
+      }else{
+        choices(alts[0],false);
+      }
+    }
+  };
+}else{
+  mic.disabled=true;
+  mic.textContent="🎤 MICRO NON DISPONIBLE";
+  status.textContent="Safari ne fournit pas ici l'interface de reconnaissance vocale. La recherche clavier reste disponible.";
+}
+
+// Pas de service worker dans ce test : cela évite de recharger un ancien app.js.
+if("serviceWorker" in navigator){
+  navigator.serviceWorker.getRegistrations().then(regs=>regs.forEach(r=>r.unregister()));
+}
