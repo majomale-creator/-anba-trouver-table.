@@ -26,4 +26,12 @@ button{border:0;border-radius:16px;font-weight:700;font-size:18px;padding:16px;w
 <div id="result" class="card result"><div>INVITÉ</div><div id="rname" class="name"></div><div style="margin-top:18px">TABLE</div><div id="rtable" class="table"></div><button id="again">NOUVELLE RECHERCHE</button></div>
 <div class="small">136 invités · données test intégrées. La recherche par texte est locale. Le micro dépend de la reconnaissance vocale disponible dans Safari/iOS.</div>
 </div>
-<script src="app.js"></script></body></html>
+<script src="app.js"></script><script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    registrations.forEach(function(registration) { registration.unregister(); });
+  });
+}
+</script>
+
+</body></html>
