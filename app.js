@@ -34,7 +34,15 @@ function choices(t,voice=false){
 q.oninput=e=>choices(e.target.value);
 document.querySelector("#again").onclick=()=>{res.style.display="none";q.value="";c.innerHTML="";q.focus()};
 const SR=window.SpeechRecognition||window.webkitSpeechRecognition,mic=document.querySelector("#mic"),status=document.querySelector("#status"),heard=document.querySelector("#heard");
-if(SR){let rec=new SR();rec.lang="en-IN";rec.interimResults=false;rec.maxAlternatives=10;mic.onclick=()=>{try{rec.start()}catch(e){}};rec.onstart=()=>{mic.classList.add("on");mic.textContent="● J'ÉCOUTE…";status.textContent="Prononcez le nom.";heard.textContent=""};rec.onend=()=>{mic.classList.remove("on");mic.textContent="🎤 DIRE LE NOM"};rec.onerror=e=>status.textContent="Erreur micro : "+e.error;rec.onresult=e=>{
+if(SR){let rec=new SR();if ("SpeechRecognitionPhrase" in window && "phrases" in rec) {
+  rec.phrases = [
+    new SpeechRecognitionPhrase("Gnianou", 8),
+    new SpeechRecognitionPhrase("Karuna", 8),
+    new SpeechRecognitionPhrase("Moutapa", 8),
+    new SpeechRecognitionPhrase("Basque", 8),
+    new SpeechRecognitionPhrase("Morgan", 8)
+  ];
+}rec.lang="fr-FR";rec.interimResults=false;rec.maxAlternatives=10;mic.onclick=()=>{try{rec.start()}catch(e){}};rec.onstart=()=>{mic.classList.add("on");mic.textContent="● J'ÉCOUTE…";status.textContent="Prononcez le nom.";heard.textContent=""};rec.onend=()=>{mic.classList.remove("on");mic.textContent="🎤 DIRE LE NOM"};rec.onerror=e=>status.textContent="Erreur micro : "+e.error;rec.onresult=e=>{
  let alts=[];for(let i=0;i<e.results[0].length;i++)alts.push(e.results[0][i].transcript);
  heard.textContent='Entendu : “'+alts[0]+'”';
  for(const t of alts){const known=aliasTarget(t);if(known){show(known);return}}
