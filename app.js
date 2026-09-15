@@ -25,6 +25,39 @@ try {
   }
 } catch (err) {
   console.log("Contextual biasing non disponible; reconnaissance normale conservée.", err);
-}mic.onclick=()=>{try{rec.start()}catch(e){}};rec.onstart=()=>{mic.classList.add("on");mic.textContent="● J'ÉCOUTE…";status.textContent="Prononcez le nom.";heard.textContent=""};rec.onend=()=>{mic.classList.remove("on");mic.textContent="🎤 DIRE LE NOM"};rec.onerror=e=>status.textContent="Erreur micro : "+e.error;rec.onresult=e=>{let alts=[];for(let i=0;i<e.results[0].length;i++)alts.push(e.results[0][i].transcript);heard.textContent='Entendu : “'+alts[0]+'”';let all=[];alts.forEach(t=>rank(t).slice(0,3).forEach(x=>all.push({...x,text:t})));all.sort((a,b)=>b.s-a.s);if(all[0]){let next=all.find(x=>x.p!==all[0].p);if(all[0].s>=.82&&(!next||all[0].s-next.s>=.08))show(all[0].p);else choices(alts[0],false)}}}
+}mic.onclick=()=>{try{rec.start()}catch(e){}};rec.onstart=()=>{mic.classList.add("on");mic.textContent="● J'ÉCOUTE…";status.textContent="Prononcez le nom.";heard.textContent=""};rec.onend=()=>{mic.classList.remove("on");mic.textContent="🎤 DIRE LE NOM"};rec.onerror=e=>status.textContent="Erreur micro : "+e.error;rec.onresult=e=>{
+  let alts=[];
+  for(let i=0;i<e.results[0].length;i++) alts.push(e.results[0][i].transcript);
+  heard.textContent='Entendu : “'+alts[0]+'”';
+
+  // Si Safari donne exactement une personne dans l'une de ses hypothèses,
+  // cette personne gagne immédiatement.
+  const ex=x=>norm(x).replace(/\\s+/g," ").trim();
+  for(const t of alts){
+    const h=ex(t);
+    for(const p of PEOPLE){
+      if(h===ex(p.nom+" "+p.prenom) || h===ex(p.prenom+" "+p.nom)){
+        show(p); return;
+      }
+    }
+  }
+
+  // Si seul le nom est entendu et qu'il est unique dans la liste.
+  for(const t of alts){
+    const h=ex(t);
+    const ms=PEOPLE.filter(p=>ex(p.nom)===h);
+    if(ms.length===1){ show(ms[0]); return; }
+  }
+
+  // Sinon seulement : rapprochement approximatif.
+  let all=[];
+  alts.forEach(t=>rank(t).slice(0,3).forEach(x=>all.push({...x,text:t})));
+  all.sort((a,b)=>b.s-a.s);
+  if(all[0]){
+    let next=all.find(x=>x.p!==all[0].p);
+    if(all[0].s>=.82&&(!next||all[0].s-next.s>=.08)) show(all[0].p);
+    else choices(alts[0],false);
+  }
+}}
 else{mic.disabled=true;mic.textContent="🎤 MICRO NON DISPONIBLE";status.textContent="Safari ne fournit pas ici l'interface de reconnaissance vocale. La recherche clavier reste disponible."}
 
